@@ -24,7 +24,6 @@ final class ImportCommand extends Command
 
     /**
      * ImportCommand constructor.
-     * @param ImportServiceContract $importService
      */
     public function __construct(ImportServiceContract $importService)
     {

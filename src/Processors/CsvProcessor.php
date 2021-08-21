@@ -14,13 +14,13 @@ final class CsvProcessor extends SerializerProcessor
 {
     public const FORMAT = 'csv';
 
-    protected function getSerializer(): SerializerInterface
-    {
-        return new Serializer([new ObjectNormalizer()], [new CsvEncoder()]);
-    }
-
     public function getFormat(): string
     {
         return self::FORMAT;
+    }
+
+    protected function getSerializer(): SerializerInterface
+    {
+        return new Serializer([new ObjectNormalizer()], [new CsvEncoder()]);
     }
 }

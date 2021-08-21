@@ -41,5 +41,4 @@ final class ImportDto
     {
         return $this->outputFile;
     }
-
 }

@@ -4,12 +4,6 @@ declare(strict_types=1);
 
 namespace App\Processors\Concerns;
 
-use Symfony\Component\Serializer\Encoder\EncoderInterface;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\SerializerInterface;
-
 abstract class Processor implements InputProcessorContract, OutputProcessorContract, FilenameContract
 {
     protected array $data;
@@ -26,17 +20,6 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
     abstract public function fetch(): self;
 
     abstract public function getContent(): string;
-
-    protected function getInputContent(string $file): string
-    {
-        $content = @file_get_contents($file);
-
-        if (empty($content)) {
-            throw new \RuntimeException("File is not readable");
-        }
-
-        return $content;
-    }
 
     public function getData(): array
     {
@@ -58,10 +41,21 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
 
     public function store(): self
     {
-        if (file_put_contents($this->filename, $this->getContent()) === false) {
+        if (@file_put_contents($this->filename, $this->getContent()) === false) {
             throw new \RuntimeException('File is not writable on ' . $this->filename);
         }
 
         return $this;
+    }
+
+    protected function getInputContent(string $file): string
+    {
+        $content = @file_get_contents($file);
+
+        if (empty($content)) {
+            throw new \RuntimeException('File is not readable');
+        }
+
+        return $content;
     }
 }

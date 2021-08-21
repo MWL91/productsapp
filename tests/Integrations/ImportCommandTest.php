@@ -21,7 +21,7 @@ class ImportCommandTest extends KernelTestCase
         self::bootKernel();
     }
 
-    public function commandInputDataProvider()
+    public function commandInputDataProvider(): \Generator
     {
         /**
          * IMPORTANT NOTE:
@@ -63,14 +63,31 @@ class ImportCommandTest extends KernelTestCase
         unlink($exportedFileName);
     }
 
-    public function test_command_fail_when_input_not_readable(): void
+    public function commandInvalidInputDataProvider(): \Generator
+    {
+        yield [
+            [
+                'inputFile' => 'input.xml',
+                'outputFile' => 'output.xml',
+            ]
+        ];
+
+        yield [
+            [
+                'inputFile' => 'phar://.env.test',
+                'outputFile' => 'output.xml',
+            ]
+        ];
+    }
+
+    /**
+     * @dataProvider commandInvalidInputDataProvider
+     */
+    public function test_command_failure(array $input): void
     {
         $command = self::$container->get(ImportCommand::class);
         $commandTest = new CommandTester($command);
 
-        $this->assertEquals(Command::FAILURE, $commandTest->execute([
-            'inputFile' => 'input.xml',
-            'outputFile' => 'output.xml',
-        ]));
+        $this->assertEquals(Command::FAILURE, $commandTest->execute($input));
     }
 }

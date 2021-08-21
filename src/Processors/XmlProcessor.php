@@ -14,13 +14,13 @@ final class XmlProcessor extends SerializerProcessor
 {
     public const FORMAT = 'xml';
 
-    protected function getSerializer(): SerializerInterface
-    {
-        return new Serializer([new ObjectNormalizer()], [new XmlEncoder()]);
-    }
-
     public function getFormat(): string
     {
         return self::FORMAT;
+    }
+
+    protected function getSerializer(): SerializerInterface
+    {
+        return new Serializer([new ObjectNormalizer()], [new XmlEncoder()]);
     }
 }
