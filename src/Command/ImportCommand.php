@@ -6,6 +6,7 @@ namespace App\Command;
 
 use App\Dtos\ImportDto;
 use App\Services\Contracts\ImportServiceContract;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -21,15 +22,17 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class ImportCommand extends Command
 {
     private ImportServiceContract $importService;
+    private LoggerInterface $logger;
 
     /**
      * ImportCommand constructor.
      */
-    public function __construct(ImportServiceContract $importService)
+    public function __construct(ImportServiceContract $importService, LoggerInterface $logger)
     {
         parent::__construct();
 
         $this->importService = $importService;
+        $this->logger = $logger;
     }
 
     protected function configure(): void
@@ -56,11 +59,12 @@ final class ImportCommand extends Command
             );
         } catch (\RuntimeException $exception) {
             $io->error($exception->getMessage());
+            $this->logger->error($exception->getMessage(), [$exception]);
 
             return Command::FAILURE;
         }
 
-        $io->success('File successfully stored at `'.$output->getFilename().'`.');
+        $io->success('File successfully stored at `' . $output->getFilename() . '`.');
 
         return Command::SUCCESS;
     }

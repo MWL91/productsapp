@@ -9,6 +9,7 @@ use App\Processors\Concerns\InputProcessorContract;
 use App\Services\Contracts\ImportServiceContract;
 use Mockery;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 
@@ -26,7 +27,7 @@ class ImportCommandTest extends TestCase
             ])
             ->getMock();
 
-        $commandTest = new CommandTester(new ImportCommand($importServiceMock));
+        $commandTest = new CommandTester(new ImportCommand($importServiceMock, Mockery::mock(LoggerInterface::class)));
 
         $this->assertEquals(Command::SUCCESS, $commandTest->execute([
             'inputFile' => 'input.xml',
@@ -39,7 +40,7 @@ class ImportCommandTest extends TestCase
         $importServiceMock = Mockery::mock(ImportServiceContract::class);
         $importServiceMock->shouldReceive('import')->andThrow(\RuntimeException::class);
 
-        $commandTest = new CommandTester(new ImportCommand($importServiceMock));
+        $commandTest = new CommandTester(new ImportCommand($importServiceMock, Mockery::mock(LoggerInterface::class)->shouldReceive(['error' => null])->getMock()));
 
         $this->assertEquals(Command::FAILURE, $commandTest->execute([
             'inputFile' => 'input.xml',
@@ -59,6 +60,6 @@ class ImportCommandTest extends TestCase
             ])
             ->getMock();
 
-        (new CommandTester(new ImportCommand($importServiceMock)))->execute([]);
+        (new CommandTester(new ImportCommand($importServiceMock, Mockery::mock(LoggerInterface::class))))->execute([]);
     }
 }

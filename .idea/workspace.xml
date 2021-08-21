@@ -1,26 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="phpinsights fix">
+    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="php cs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Command/ImportCommand.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Command/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Command/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Dtos/ImportDto.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Dtos/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Dtos/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Kernel.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/FilenameContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/InputProcessorContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/OutputProcessorContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/Processor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/SerializerProcessor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/CsvProcessor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/XmlProcessor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Processors/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Services/Contracts/ImportServiceContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Services/Contracts/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Services/Contracts/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Services/ImportService.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Services/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/Services/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_css/nv.d3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_css/octicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_icons/file-code.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_icons/file-directory.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_js/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_js/file.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_js/nv.d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/_js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/ImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ImportCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dtos/ImportDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dtos/ImportDto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/FilenameContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/FilenameContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/InputProcessorContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/InputProcessorContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/OutputProcessorContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/OutputProcessorContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/CsvProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/CsvProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,9 +215,9 @@
       <recent name="$PROJECT_DIR$/src/Outputs/Concerns" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.KernelTest.test_kernel">
-    <configuration name="ImportCommandTest.test_command_failure" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Integrations\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" method="test_command_failure" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="ImportCommandTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="ImportServiceTest.test_import_fails_on_empty_file" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -198,10 +228,6 @@
       <TestRunner class="App\Tests\Units\ImportServiceTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" method="test_import_fails_on_phar_protocol" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ImportServiceTest.test_import_service" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\ImportServiceTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" method="test_import_service" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="KernelTest.test_kernel" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Units\KernelTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/KernelTest.php" method="test_kernel" scope="Method" />
       <method v="2" />
@@ -210,13 +236,17 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.ImportCommandTest" />
         <item itemvalue="PHPUnit.KernelTest.test_kernel" />
         <item itemvalue="PHPUnit.ImportServiceTest.test_import_fails_on_empty_file" />
         <item itemvalue="PHPUnit.ImportServiceTest.test_import_fails_on_phar_protocol" />
-        <item itemvalue="PHPUnit.ImportServiceTest.test_import_service" />
-        <item itemvalue="PHPUnit.ImportCommandTest.test_command_failure" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +259,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629532561643</updated>
       <workItem from="1629532566116" duration="1466000" />
-      <workItem from="1629534377075" duration="30560000" />
+      <workItem from="1629534377075" duration="34081000" />
     </task>
     <task id="LOCAL-00001" summary="command prepared">
       <created>1629543616737</created>
@@ -273,7 +303,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629569810789</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="coverage inc">
+      <created>1629572980068</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629572980068</updated>
+    </task>
+    <task id="LOCAL-00008" summary="php cs">
+      <created>1629573090253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1629573090253</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +342,9 @@
     <MESSAGE value="import xml files" />
     <MESSAGE value="solution before QA refactor" />
     <MESSAGE value="phpinsights fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="phpinsights fix" />
+    <MESSAGE value="coverage inc" />
+    <MESSAGE value="php cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="php cs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/productsapp@ImportServiceTest_test_import_fails_on_phar_protocol.xml" NAME="ImportServiceTest.test_import_fails_on_phar_protocol Coverage Results" MODIFIED="1629571649229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
