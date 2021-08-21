@@ -9,17 +9,29 @@ use App\Services\Contracts\ImportServiceContract;
 class ImportService implements ImportServiceContract
 {
 
-    public function getInputProcessor(string $format)
+    public function getInputProcessor(string $format): InputContract
     {
-        // TODO: Implement getInputProcessor() method.
+        $className = 'App\\Inputs\\' . ucfirst($format) . 'Input';
+
+        if (!class_exists($className)) {
+            throw new \RuntimeException("Input format " . $format . " not exists.");
+        }
+
+        return new $className();
     }
 
-    public function getOutputProcessor(string $format)
+    public function getOutputProcessor(string $format): OutputContract
     {
-        // TODO: Implement getOutputProcessor() method.
+        $className = 'App\\Outputs\\' . ucfirst($format) . 'Output';
+
+        if (!class_exists($className)) {
+            throw new \RuntimeException("Output format " . $format . " not exists.");
+        }
+
+        return new $className();
     }
 
-    public function import(string $file, InputContract $inputFormat, OutputContract $outputFormat)
+    public function import(string $file, InputContract $inputFormat, OutputContract $outputFormat): OutputContract
     {
         // TODO: Implement import() method.
     }

@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/preload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inputs/Concerns/AbstractInput.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inputs/Concerns/InputContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Inputs/XmlInput.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Outputs/Concerns/AbstractOutput.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Outputs/Concerns/OutputContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Outputs/CsvOutput.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="command prepared">
+      <change afterPath="$PROJECT_DIR$/tests/ImportServiceTestCase.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inputs/XmlInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inputs/XmlInput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Outputs/CsvOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Outputs/CsvOutput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,56 +152,57 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Outputs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Units" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Units" />
       <recent name="$PROJECT_DIR$/src/Outputs" />
       <recent name="$PROJECT_DIR$/src/Inputs" />
-      <recent name="$PROJECT_DIR$/tests/Units" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/tests/Units" />
       <recent name="$PROJECT_DIR$/src/Outputs/Concerns" />
       <recent name="$PROJECT_DIR$/src/Inputs/Concerns" />
-      <recent name="$PROJECT_DIR$/tests/Units" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ImportCommandTest">
-    <configuration name="ImportCommandTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.ImportServiceInstantiateTest">
+    <configuration name="ImportServiceInstantiateTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportServiceInstantiateTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ImportCommandTest.test_command_fail_without_file_input" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" method="test_command_fail_without_file_input" scope="Method" />
+    <configuration name="ImportServiceInstantiateTest.test_can_not_get_not_existing_processor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportServiceInstantiateTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" method="test_can_not_get_not_existing_processor" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ImportCommandTest.test_command_success" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" method="test_command_success" scope="Method" />
+    <configuration name="ImportServiceInstantiateTest.test_get_input_processor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportServiceInstantiateTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" method="test_get_input_processor" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ImportCommandTest.test_command_withoutProcessor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" method="test_command_withoutProcessor" scope="Method" />
+    <configuration name="ImportServiceInstantiateTest.test_get_output_processor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportServiceInstantiateTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" method="test_get_output_processor" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ImportServiceInstantiateTest.test_instantiate_service" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportServiceInstantiateTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" method="test_instantiate_service" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ImportCommandTest" />
-        <item itemvalue="PHPUnit.ImportCommandTest.test_command_fail_without_file_input" />
-        <item itemvalue="PHPUnit.ImportCommandTest.test_command_withoutProcessor" />
-        <item itemvalue="PHPUnit.ImportCommandTest.test_command_success" />
-        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.ImportServiceInstantiateTest" />
+        <item itemvalue="PHPUnit.ImportServiceInstantiateTest.test_can_not_get_not_existing_processor" />
+        <item itemvalue="PHPUnit.ImportServiceInstantiateTest.test_get_output_processor" />
+        <item itemvalue="PHPUnit.ImportServiceInstantiateTest.test_get_input_processor" />
+        <item itemvalue="PHPUnit.ImportServiceInstantiateTest.test_instantiate_service" />
       </list>
     </recent_temporary>
   </component>
@@ -234,8 +215,16 @@
       <option name="presentableId" value="Default" />
       <updated>1629532561643</updated>
       <workItem from="1629532566116" duration="1466000" />
-      <workItem from="1629534377075" duration="8783000" />
+      <workItem from="1629534377075" duration="10361000" />
     </task>
+    <task id="LOCAL-00001" summary="command prepared">
+      <created>1629543616737</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629543616737</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,5 +241,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="command prepared" />
+    <option name="LAST_COMMIT_MESSAGE" value="command prepared" />
   </component>
 </project>

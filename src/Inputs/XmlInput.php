@@ -2,7 +2,9 @@
 
 namespace App\Inputs;
 
-class XmlInput
+use App\Inputs\Concerns\AbstractInput;
+
+class XmlInput extends AbstractInput
 {
 
 }

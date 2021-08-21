@@ -2,7 +2,9 @@
 
 namespace App\Outputs;
 
-class CsvOutput
+use App\Outputs\Concerns\AbstractOutput;
+
+class CsvOutput extends AbstractOutput
 {
 
 }
