@@ -56,7 +56,7 @@ input, inside output processor.
 
 All measures from phpinsights are under 90% of rate.
 
-    95.0%      92.0%          100 %        98.8%
+    95.0%      90.7%          100 %        96.4%
      Code    Complexity    Architecture    Style
 
 ### Code coverage

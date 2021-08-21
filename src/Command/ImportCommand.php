@@ -65,7 +65,6 @@ final class ImportCommand extends Command
         }
 
         $io->success('File successfully stored at `' . $output->getFilename() . '`.');
-
         return Command::SUCCESS;
     }
 }

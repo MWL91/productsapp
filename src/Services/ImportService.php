@@ -12,24 +12,27 @@ final class ImportService implements ImportServiceContract
 {
     public function getProcessor(string $format, string $filename): InputProcessorContract
     {
-        $className = 'App\\Processors\\'.ucfirst($format).'Processor';
+        $className = 'App\\Processors\\' . ucfirst($format) . 'Processor';
 
         if (!class_exists($className)) {
-            throw new \RuntimeException('Input format '.$format.' not exists.');
+            throw new \RuntimeException('Input format ' . $format . ' not exists.');
         }
 
         return new $className($filename);
     }
 
-    public function processImport(InputProcessorContract $input, InputProcessorContract $output): InputProcessorContract
+    public function processImport(
+        InputProcessorContract $input,
+        InputProcessorContract $output
+    ): InputProcessorContract
     {
         return $output->applyInput($input)->store();
     }
 
     public function import(ImportDto $importDto): InputProcessorContract
     {
-        if ('phar://' === substr($importDto->getInputFile(), 0, 7)) {
-            throw new \RuntimeException('Due to security issues, you can not use phar protocol as input');
+        if (substr($importDto->getInputFile(), 0, 7) === 'phar://') {
+            throw new \RuntimeException('You can not use phar protocol as input.');
         }
 
         $inputProcessor = $this->getProcessor($importDto->getInputFormat(), $importDto->getInputFile());

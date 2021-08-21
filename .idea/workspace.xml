@@ -1,56 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="php cs">
+    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="readme + exec">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Command/ImportCommand.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Command/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Command/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Dtos/ImportDto.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Dtos/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Dtos/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Kernel.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/FilenameContract.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/InputProcessorContract.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/OutputProcessorContract.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/Processor.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/SerializerProcessor.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/Concerns/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/CsvProcessor.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/XmlProcessor.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Processors/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Services/Contracts/ImportServiceContract.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Services/Contracts/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Services/Contracts/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Services/ImportService.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Services/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/Services/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_css/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_css/nv.d3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_css/octicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_icons/file-code.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_icons/file-directory.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_js/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_js/file.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_js/nv.d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/_js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/ImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ImportCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +171,7 @@
       <recent name="$PROJECT_DIR$/src/Outputs/Concerns" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.tests">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
     <configuration name="ImportCommandTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" scope="Class" />
       <method v="2" />
@@ -259,7 +215,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629532561643</updated>
       <workItem from="1629532566116" duration="1466000" />
-      <workItem from="1629534377075" duration="34081000" />
+      <workItem from="1629534377075" duration="34341000" />
     </task>
     <task id="LOCAL-00001" summary="command prepared">
       <created>1629543616737</created>
@@ -317,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629573090253</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="readme + exec">
+      <created>1629577422139</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1629577422139</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +307,8 @@
     <MESSAGE value="phpinsights fix" />
     <MESSAGE value="coverage inc" />
     <MESSAGE value="php cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="php cs" />
+    <MESSAGE value="readme + exec" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme + exec" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/productsapp@ImportServiceTest_test_import_fails_on_phar_protocol.xml" NAME="ImportServiceTest.test_import_fails_on_phar_protocol Coverage Results" MODIFIED="1629571649229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
