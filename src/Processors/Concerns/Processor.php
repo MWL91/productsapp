@@ -41,8 +41,8 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
 
     public function store(): self
     {
-        if (@file_put_contents($this->filename, $this->getContent()) === false) {
-            throw new \RuntimeException('File is not writable on ' . $this->filename);
+        if (false === @file_put_contents($this->filename, $this->getContent())) {
+            throw new \RuntimeException('File is not writable on '.$this->filename);
         }
 
         return $this;

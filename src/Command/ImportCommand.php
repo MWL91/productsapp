@@ -56,10 +56,11 @@ final class ImportCommand extends Command
             );
         } catch (\RuntimeException $exception) {
             $io->error($exception->getMessage());
+
             return Command::FAILURE;
         }
 
-        $io->success('File successfully stored at `' . $output->getFilename() . '`.');
+        $io->success('File successfully stored at `'.$output->getFilename().'`.');
 
         return Command::SUCCESS;
     }
