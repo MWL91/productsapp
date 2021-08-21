@@ -3,13 +3,13 @@
 namespace App\Tests\Units;
 
 use App\Command\ImportCommand;
-use App\Inputs\Concerns\InputContract;
-use App\Outputs\Concerns\OutputContract;
+use App\Processors\Concerns\InputProcessorContract;
+use App\Processors\Concerns\ProcessorAbstract;
 use App\Services\Contracts\ImportServiceContract;
+use Mockery;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
-use Mockery;
 
 class ImportCommandTest extends TestCase
 {
@@ -17,30 +17,32 @@ class ImportCommandTest extends TestCase
     {
         $importServiceMock = Mockery::mock(ImportServiceContract::class)
             ->shouldReceive([
-                'getInputProcessor' => Mockery::mock(InputContract::class),
-                'getOutputProcessor' => Mockery::mock(OutputContract::class),
-                'import' => Mockery::mock(OutputContract::class),
+                'import' => Mockery::mock(InputProcessorContract::class)
+                    ->shouldReceive([
+                        'getFilename' => 'output.xml'
+                    ])
+                    ->getMock(),
             ])
             ->getMock();
 
         $commandTest = new CommandTester(new ImportCommand($importServiceMock));
 
         $this->assertEquals(Command::SUCCESS, $commandTest->execute([
-            'file' => 'example.xml'
+            'inputFile' => 'input.xml',
+            'outputFile' => 'output.xml',
         ]));
     }
 
     public function test_command_withoutProcessor(): void
     {
         $importServiceMock = Mockery::mock(ImportServiceContract::class);
-        $importServiceMock->shouldReceive('getInputProcessor')->andThrow(\RuntimeException::class);
-        $importServiceMock->shouldReceive('getOutputProcessor')->andThrow(\RuntimeException::class);
-        $importServiceMock->shouldReceive('import')->andReturn(Mockery::mock(OutputContract::class));
+        $importServiceMock->shouldReceive('import')->andThrow(\RuntimeException::class);
 
         $commandTest = new CommandTester(new ImportCommand($importServiceMock));
 
-        $this->assertEquals(Command::INVALID, $commandTest->execute([
-            'file' => 'example.xml'
+        $this->assertEquals(Command::FAILURE, $commandTest->execute([
+            'inputFile' => 'input.xml',
+            'outputFile' => 'output.xml',
         ]));
     }
 

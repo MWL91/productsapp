@@ -2,14 +2,14 @@
 
 namespace App\Services\Contracts;
 
-use App\Inputs\Concerns\InputContract;
-use App\Outputs\Concerns\OutputContract;
+use App\Dtos\ImportDto;
+use App\Processors\Concerns\InputProcessorContract;
 
 interface ImportServiceContract
 {
-    public function getInputProcessor(string $format): InputContract;
+    public function getProcessor(string $format, string $filename): InputProcessorContract;
 
-    public function getOutputProcessor(string $format): OutputContract;
+    public function processImport(InputProcessorContract $input, InputProcessorContract $output): InputProcessorContract;
 
-    public function import(string $file, InputContract $inputFormat, OutputContract $outputFormat): OutputContract;
+    public function import(ImportDto $importDto): InputProcessorContract;
 }

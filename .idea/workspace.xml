@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="import TODO">
-      <change afterPath="$PROJECT_DIR$/tests/resources/invalid.xml" afterDir="false" />
+    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="import xml files">
+      <change afterPath="$PROJECT_DIR$/src/Dtos/ImportDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Processors/Concerns/FilenameContract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Processors/Concerns/OutputProcessorContract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Processors/Concerns/ProcessorAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessorAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Processors/CsvProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Command/ImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ImportCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inputs/Concerns/AbstractInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inputs/Concerns/AbstractInput.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inputs/Concerns/InputContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inputs/Concerns/InputContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inputs/XmlInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inputs/XmlInput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inputs/Concerns/AbstractInput.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inputs/Concerns/InputContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/InputProcessorContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inputs/XmlInput.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Outputs/Concerns/AbstractOutput.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Outputs/Concerns/OutputContract.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Outputs/CsvOutput.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportServiceInstantiateTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/XmlInputTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,44 +166,46 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Inputs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Processors/Concerns" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Processors/Concerns" />
+      <recent name="$PROJECT_DIR$/src/Processors" />
       <recent name="$PROJECT_DIR$/src/Inputs" />
       <recent name="$PROJECT_DIR$/tests/Units" />
       <recent name="$PROJECT_DIR$/src/Outputs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tests/Units" />
       <recent name="$PROJECT_DIR$/tests/Integrations" />
+      <recent name="$PROJECT_DIR$/tests/Units" />
       <recent name="$PROJECT_DIR$/tests/resources" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/src/Outputs/Concerns" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.XmlInputTest.test_fetch_data_from_xml_input">
-    <configuration name="Integrations" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests/Integrations" />
+  <component name="RunManager" selected="PHPUnit.ImportCommandTest">
+    <configuration name="ImportCommandTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="SerializerTest.testSomething" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\SerializerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlInputTest.php" method="testSomething" scope="Method" />
+    <configuration name="ImportCommandTest.test_command_success (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Integrations\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" method="test_command_success" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="SerializerTest.test_use_serializer" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\SerializerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlInputTest.php" method="test_use_serializer" scope="Method" />
+    <configuration name="ImportCommandTest.test_command_success" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" method="test_command_success" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="XmlInputTest.test_fetch_data_from_xml_input" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\XmlInputTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlInputTest.php" method="test_fetch_data_from_xml_input" scope="Method" />
+    <configuration name="ImportCommandTest.test_command_withoutProcessor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" method="test_command_withoutProcessor" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="XmlInputTest.test_fetch_data_from_xml_input_when_invalid_file" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\XmlInputTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlInputTest.php" method="test_fetch_data_from_xml_input_when_invalid_file" scope="Method" />
+    <configuration name="XmlProcessorTest.test_use_serializer" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Units\XmlProcessorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" method="test_use_serializer" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -201,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.XmlInputTest.test_fetch_data_from_xml_input" />
-        <item itemvalue="PHPUnit.XmlInputTest.test_fetch_data_from_xml_input_when_invalid_file" />
-        <item itemvalue="PHPUnit.Integrations" />
-        <item itemvalue="PHPUnit.SerializerTest.test_use_serializer" />
-        <item itemvalue="PHPUnit.SerializerTest.testSomething" />
+        <item itemvalue="PHPUnit.ImportCommandTest" />
+        <item itemvalue="PHPUnit.ImportCommandTest.test_command_withoutProcessor" />
+        <item itemvalue="PHPUnit.ImportCommandTest.test_command_success" />
+        <item itemvalue="PHPUnit.ImportCommandTest.test_command_success (1)" />
+        <item itemvalue="PHPUnit.XmlProcessorTest.test_use_serializer" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +231,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629532561643</updated>
       <workItem from="1629532566116" duration="1466000" />
-      <workItem from="1629534377075" duration="16005000" />
+      <workItem from="1629534377075" duration="25477000" />
     </task>
     <task id="LOCAL-00001" summary="command prepared">
       <created>1629543616737</created>
@@ -241,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629545520562</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="import xml files">
+      <created>1629555661210</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629555661210</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +283,7 @@
     <MESSAGE value="command prepared" />
     <MESSAGE value="instantiate inputs / outputs" />
     <MESSAGE value="import TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="import TODO" />
+    <MESSAGE value="import xml files" />
+    <option name="LAST_COMMIT_MESSAGE" value="import xml files" />
   </component>
 </project>

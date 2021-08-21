@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Dtos\ImportDto;
 use App\Exceptions\InvalidFormatException;
 use App\Services\Contracts\ImportServiceContract;
 use Mockery\Exception\RuntimeException;
@@ -35,9 +36,10 @@ final class ImportCommand extends Command
     protected function configure(): void
     {
         $this
-            ->addArgument('file', InputArgument::REQUIRED, 'File path or url to import')
-            ->addOption('input', null, InputOption::VALUE_OPTIONAL, 'Input format', 'xml')
-            ->addOption('output', null, InputOption::VALUE_OPTIONAL, 'Output format', 'csv');
+            ->addArgument('inputFile', InputArgument::REQUIRED, 'File path or url to import')
+            ->addArgument('outputFile', InputArgument::REQUIRED, 'File path or url to export')
+            ->addOption('inputFormat', null, InputOption::VALUE_OPTIONAL, 'Input format', 'xml')
+            ->addOption('outputFormat', null, InputOption::VALUE_OPTIONAL, 'Output format', 'csv');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -45,16 +47,20 @@ final class ImportCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         try {
-            $inputProcessor = $this->importService->getInputProcessor($input->getOption('input'));
-            $outputProcessor = $this->importService->getOutputProcessor($input->getOption('output'));
+            $output = $this->importService->import(
+                new ImportDto(
+                    $input->getOption('inputFormat'),
+                    $input->getArgument('inputFile'),
+                    $input->getOption('outputFormat'),
+                    $input->getArgument('outputFile')
+                )
+            );
         } catch (\RuntimeException $exception) {
             $io->error($exception->getMessage());
-            return Command::INVALID;
+            return Command::FAILURE;
         }
 
-        $this->importService->import($input->getArgument('file'), $inputProcessor, $outputProcessor);
-
-        $io->success('Success.');
+        $io->success('File successfully stored at `' . $output->getFilename() . '`.');
 
         return Command::SUCCESS;
     }

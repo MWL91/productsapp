@@ -2,8 +2,8 @@
 
 namespace App\Tests\Units;
 
-use App\Inputs\XmlInput;
-use App\Outputs\CsvOutput;
+use App\Processors\CsvProcessor;
+use App\Processors\XmlProcessor;
 use App\Services\ImportService;
 use App\Tests\ImportServiceTestCase;
 
@@ -16,17 +16,17 @@ class ImportServiceInstantiateTest extends ImportServiceTestCase
 
     public function test_can_get_xml_input_processor(): void
     {
-        $this->assertInstanceOf(XmlInput::class, $this->importService->getInputProcessor('xml'));
+        $this->assertInstanceOf(XmlProcessor::class, $this->importService->getProcessor('xml', 'example.xml'));
     }
 
     public function test_can_get_csv_output_processor(): void
     {
-        $this->assertInstanceOf(CsvOutput::class, $this->importService->getOutputProcessor('csv'));
+        $this->assertInstanceOf(CsvProcessor::class, $this->importService->getProcessor('csv', 'example.csv'));
     }
 
     public function test_can_not_get_not_existing_processor(): void
     {
         $this->expectException(\RuntimeException::class);
-        $this->importService->getOutputProcessor('not_existing');
+        $this->importService->getProcessor('not_existing', 'none');
     }
 }

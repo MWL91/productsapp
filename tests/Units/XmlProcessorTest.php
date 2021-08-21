@@ -2,7 +2,8 @@
 
 namespace App\Tests\Units;
 
-use App\Inputs\XmlInput;
+use App\Processors\CsvProcessor;
+use App\Processors\XmlProcessor;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -10,13 +11,13 @@ use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
-class XmlInputTest extends KernelTestCase
+class XmlProcessorTest extends KernelTestCase
 {
     public function test_use_serializer(): void
     {
         self::bootKernel();
 
-        $encoders = [new XmlEncoder(), new JsonEncoder(), new CsvEncoder()];
+        $encoders = [new XmlEncoder(), new CsvEncoder()];
         $normalizers = [new ObjectNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
@@ -33,10 +34,11 @@ class XmlInputTest extends KernelTestCase
 
     public function test_fetch_data_from_xml_input(): void
     {
-        $input = new XmlInput();
-        $input->fetch(__DIR__ . '/../resources/coffee_feed.xml');
+        $input = new XmlProcessor(__DIR__ . '/../resources/coffee_feed.xml');
+        $input->fetch();
 
         $this->assertCount(3449, $input->getData());
+        $this->assertIsString($input->getContent());
     }
 
     /**
@@ -46,8 +48,8 @@ class XmlInputTest extends KernelTestCase
     {
         $this->expectException(\RuntimeException::class);
 
-        $input = new XmlInput();
-        $input->fetch($fileName);
+        $input = new XmlProcessor($fileName);
+        $input->fetch();
     }
 
     public function invalidFilesDataProvider(): \Generator
@@ -55,5 +57,20 @@ class XmlInputTest extends KernelTestCase
         yield [__DIR__];
         yield [__DIR__ . '/example.xml'];
         yield [__DIR__ . '/../resources/invalid.xml'];
+    }
+
+    public function test_fetch_and_store_data_as_csv(): void
+    {
+        $exportedFileName = __DIR__ . '/../resources/' . time() . '.csv';
+
+        $input = new XmlProcessor(__DIR__ . '/../resources/coffee_feed.xml');
+        $input->fetch();
+
+        $output = new CsvProcessor($exportedFileName);
+        $output->setData($input->getData());
+        $output->store();
+
+        $this->assertFileExists($exportedFileName);
+        unlink($exportedFileName);
     }
 }

@@ -2,42 +2,35 @@
 
 namespace App\Services;
 
-use App\Inputs\Concerns\InputContract;
-use App\Outputs\Concerns\OutputContract;
+use App\Dtos\ImportDto;
+use App\Processors\Concerns\InputProcessorContract;
 use App\Services\Contracts\ImportServiceContract;
 
 final class ImportService implements ImportServiceContract
 {
-
-    public function getInputProcessor(string $format): InputContract
+    public function getProcessor(string $format, string $filename): InputProcessorContract
     {
-        $className = 'App\\Inputs\\' . ucfirst($format) . 'Input';
+        $className = 'App\\Processors\\' . ucfirst($format) . 'Processor';
 
         if (!class_exists($className)) {
             throw new \RuntimeException("Input format " . $format . " not exists.");
         }
 
-        return new $className();
+        return new $className($filename);
     }
 
-    public function getOutputProcessor(string $format): OutputContract
+    public function processImport(InputProcessorContract $input, InputProcessorContract $output): InputProcessorContract
     {
-        $className = 'App\\Outputs\\' . ucfirst($format) . 'Output';
-
-        if (!class_exists($className)) {
-            throw new \RuntimeException("Output format " . $format . " not exists.");
-        }
-
-        return new $className();
+        return $output->setData(
+            $input->fetch()->getData()
+        )->store();
     }
 
-    public function import(string $file, InputContract $inputFormat, OutputContract $outputFormat): OutputContract
+    public function import(ImportDto $importDto): InputProcessorContract
     {
-        // $inputFormat->fetch($file);
+        $inputProcessor = $this->getProcessor($importDto->getInputFormat(), $importDto->getInputFile());
+        $outputProcessor = $this->getProcessor($importDto->getOutputFormat(), $importDto->getOutputFile());
 
-        // TODO: get file
-        // TODO: normalize in $inputFormat
-        // TODO: set $outputFormat data
-        // TODO: return OutputContract with data set -> to file
+        return $this->processImport($inputProcessor, $outputProcessor);
     }
 }
