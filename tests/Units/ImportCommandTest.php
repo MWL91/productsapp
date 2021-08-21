@@ -19,7 +19,7 @@ class ImportCommandTest extends TestCase
             ->shouldReceive([
                 'getInputProcessor' => Mockery::mock(InputContract::class),
                 'getOutputProcessor' => Mockery::mock(OutputContract::class),
-                'import' => null,
+                'import' => Mockery::mock(OutputContract::class),
             ])
             ->getMock();
 
@@ -35,7 +35,7 @@ class ImportCommandTest extends TestCase
         $importServiceMock = Mockery::mock(ImportServiceContract::class);
         $importServiceMock->shouldReceive('getInputProcessor')->andThrow(\RuntimeException::class);
         $importServiceMock->shouldReceive('getOutputProcessor')->andThrow(\RuntimeException::class);
-        $importServiceMock->shouldReceive('import')->andReturn(null);
+        $importServiceMock->shouldReceive('import')->andReturn(Mockery::mock(OutputContract::class));
 
         $commandTest = new CommandTester(new ImportCommand($importServiceMock));
 

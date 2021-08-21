@@ -54,7 +54,7 @@ class ImportCommand extends Command
 
         $this->importService->import($input->getArgument('file'), $inputProcessor, $outputProcessor);
 
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        $io->success('Success.');
 
         return Command::SUCCESS;
     }

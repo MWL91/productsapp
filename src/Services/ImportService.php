@@ -33,6 +33,9 @@ class ImportService implements ImportServiceContract
 
     public function import(string $file, InputContract $inputFormat, OutputContract $outputFormat): OutputContract
     {
-        // TODO: Implement import() method.
+        // TODO: get file
+        // TODO: normalize in $inputFormat
+        // TODO: set $outputFormat data
+        // TODO: return OutputContract with data set -> to file
     }
 }
