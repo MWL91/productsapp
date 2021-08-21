@@ -17,7 +17,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
     name: 'import',
     description: 'Add a short description for your command',
 )]
-class ImportCommand extends Command
+final class ImportCommand extends Command
 {
     private ImportServiceContract $importService;
 

@@ -6,7 +6,7 @@ use App\Inputs\Concerns\InputContract;
 use App\Outputs\Concerns\OutputContract;
 use App\Services\Contracts\ImportServiceContract;
 
-class ImportService implements ImportServiceContract
+final class ImportService implements ImportServiceContract
 {
 
     public function getInputProcessor(string $format): InputContract
@@ -33,6 +33,8 @@ class ImportService implements ImportServiceContract
 
     public function import(string $file, InputContract $inputFormat, OutputContract $outputFormat): OutputContract
     {
+        // $inputFormat->fetch($file);
+
         // TODO: get file
         // TODO: normalize in $inputFormat
         // TODO: set $outputFormat data
