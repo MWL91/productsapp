@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\Units;
 
 use App\Command\ImportCommand;
 use App\Processors\Concerns\InputProcessorContract;
-use App\Processors\Concerns\ProcessorAbstract;
 use App\Services\Contracts\ImportServiceContract;
 use Mockery;
 use PHPUnit\Framework\TestCase;

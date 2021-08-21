@@ -9,6 +9,4 @@ interface InputProcessorContract
     public function fetch(): self;
 
     public function getData(): array;
-
-    public function setData(array $data): self;
 }

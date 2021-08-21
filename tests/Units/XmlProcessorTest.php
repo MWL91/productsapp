@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\Units;
 
 use App\Processors\CsvProcessor;
 use App\Processors\XmlProcessor;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
@@ -64,11 +65,8 @@ class XmlProcessorTest extends KernelTestCase
         $exportedFileName = __DIR__ . '/../resources/' . time() . '.csv';
 
         $input = new XmlProcessor(__DIR__ . '/../resources/coffee_feed.xml');
-        $input->fetch();
-
         $output = new CsvProcessor($exportedFileName);
-        $output->setData($input->getData());
-        $output->store();
+        $output->applyInput($input)->store();
 
         $this->assertFileExists($exportedFileName);
         unlink($exportedFileName);

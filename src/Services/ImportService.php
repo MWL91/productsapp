@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 use App\Dtos\ImportDto;
@@ -21,9 +23,7 @@ final class ImportService implements ImportServiceContract
 
     public function processImport(InputProcessorContract $input, InputProcessorContract $output): InputProcessorContract
     {
-        return $output->setData(
-            $input->fetch()->getData()
-        )->store();
+        return $output->applyInput($input)->store();
     }
 
     public function import(ImportDto $importDto): InputProcessorContract

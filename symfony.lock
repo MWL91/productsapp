@@ -1,12 +1,66 @@
 {
+    "composer/ca-bundle": {
+        "version": "1.2.10"
+    },
+    "composer/composer": {
+        "version": "2.1.6"
+    },
+    "composer/metadata-minifier": {
+        "version": "1.0.0"
+    },
+    "composer/semver": {
+        "version": "3.2.5"
+    },
+    "composer/spdx-licenses": {
+        "version": "1.5.5"
+    },
+    "composer/xdebug-handler": {
+        "version": "2.0.2"
+    },
+    "dealerdirect/phpcodesniffer-composer-installer": {
+        "version": "v0.7.1"
+    },
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "a2759dd6123694c8d901d0ec80006e044c2e6457"
+        },
+        "files": [
+            "config/routes/annotations.yaml"
+        ]
+    },
     "doctrine/inflector": {
         "version": "2.0.3"
     },
     "doctrine/instantiator": {
         "version": "1.4.0"
     },
+    "doctrine/lexer": {
+        "version": "1.2.1"
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "be2103eb4a20942e28a6dd87736669b757132435"
+        },
+        "files": [
+            ".php-cs-fixer.dist.php"
+        ]
+    },
     "hamcrest/hamcrest-php": {
         "version": "v2.0.1"
+    },
+    "justinrainbow/json-schema": {
+        "version": "5.2.11"
+    },
+    "league/container": {
+        "version": "3.4.1"
     },
     "mockery/mockery": {
         "version": "1.4.3"
@@ -17,11 +71,20 @@
     "nikic/php-parser": {
         "version": "v4.12.0"
     },
+    "nunomaduro/phpinsights": {
+        "version": "v2.0.1"
+    },
     "phar-io/manifest": {
         "version": "2.0.3"
     },
     "phar-io/version": {
         "version": "3.1.0"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v2.0.2"
+    },
+    "php-parallel-lint/php-parallel-lint": {
+        "version": "v1.3.1"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -32,8 +95,14 @@
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
     },
+    "phploc/phploc": {
+        "version": "7.0.2"
+    },
     "phpspec/prophecy": {
         "version": "1.13.0"
+    },
+    "phpstan/phpdoc-parser": {
+        "version": "0.5.5"
     },
     "phpunit/php-code-coverage": {
         "version": "9.2.6"
@@ -75,6 +144,12 @@
     },
     "psr/log": {
         "version": "2.0.0"
+    },
+    "psr/simple-cache": {
+        "version": "1.0.1"
+    },
+    "react/promise": {
+        "version": "v2.8.0"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -123,6 +198,24 @@
     },
     "sebastian/version": {
         "version": "3.0.2"
+    },
+    "seld/jsonlint": {
+        "version": "1.8.3"
+    },
+    "seld/phar-utils": {
+        "version": "1.1.2"
+    },
+    "slevomat/coding-standard": {
+        "version": "7.0.13"
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.6",
+            "ref": "1019e5c08d4821cb9b77f4891f8e9c31ff20ac6f"
+        }
     },
     "symfony/browser-kit": {
         "version": "v5.3.4"
@@ -209,6 +302,9 @@
             "src/Kernel.php"
         ]
     },
+    "symfony/http-client": {
+        "version": "v5.3.4"
+    },
     "symfony/http-client-contracts": {
         "version": "v2.4.0"
     },
@@ -226,6 +322,9 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
+    },
+    "symfony/options-resolver": {
+        "version": "v5.3.4"
     },
     "symfony/phpunit-bridge": {
         "version": "5.3",
@@ -260,6 +359,9 @@
     "symfony/polyfill-php81": {
         "version": "v1.23.0"
     },
+    "symfony/process": {
+        "version": "v5.3.4"
+    },
     "symfony/property-access": {
         "version": "v5.3.4"
     },
@@ -287,6 +389,9 @@
     },
     "symfony/service-contracts": {
         "version": "v2.4.0"
+    },
+    "symfony/stopwatch": {
+        "version": "v5.3.4"
     },
     "symfony/string": {
         "version": "v5.3.3"

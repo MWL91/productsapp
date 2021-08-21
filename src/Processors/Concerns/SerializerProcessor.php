@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Processors\Concerns;
 
 use Symfony\Component\Serializer\Encoder\EncoderInterface;
@@ -8,7 +10,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
-abstract class SerializerProcessorAbstract extends ProcessorAbstract
+abstract class SerializerProcessor extends Processor
 {
     public function fetch(): self
     {
@@ -21,4 +23,6 @@ abstract class SerializerProcessorAbstract extends ProcessorAbstract
     {
         return $this->getSerializer()->encode($this->data, $this->getFormat());
     }
+
+    abstract protected function getSerializer(): SerializerInterface;
 }

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Dtos;
 
-class ImportDto
+final class ImportDto
 {
     private string $inputFormat;
     private string $inputFile;
@@ -20,33 +22,21 @@ class ImportDto
         $this->outputFile = $outputFile;
     }
 
-    /**
-     * @return string
-     */
     public function getInputFormat(): string
     {
         return $this->inputFormat;
     }
 
-    /**
-     * @return string
-     */
     public function getInputFile(): string
     {
         return $this->inputFile;
     }
 
-    /**
-     * @return string
-     */
     public function getOutputFormat(): string
     {
         return $this->outputFormat;
     }
 
-    /**
-     * @return string
-     */
     public function getOutputFile(): string
     {
         return $this->outputFile;

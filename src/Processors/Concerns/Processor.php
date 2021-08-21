@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Processors\Concerns;
 
 use Symfony\Component\Serializer\Encoder\EncoderInterface;
@@ -8,18 +10,15 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 
-abstract class ProcessorAbstract implements InputProcessorContract, OutputProcessorContract, FilenameContract
+abstract class Processor implements InputProcessorContract, OutputProcessorContract, FilenameContract
 {
     protected array $data;
     protected string $filename;
 
-    /**
-     * ProcessorAbstract constructor.
-     * @param string $filename
-     */
-    public function __construct(string $filename)
+    public function __construct(string $filename, array $data = [])
     {
         $this->filename = $filename;
+        $this->data = $data;
     }
 
     abstract public function getFormat(): string;
@@ -27,7 +26,6 @@ abstract class ProcessorAbstract implements InputProcessorContract, OutputProces
     abstract public function fetch(): self;
 
     abstract public function getContent(): string;
-
 
     protected function getInputContent(string $file): string
     {
@@ -45,9 +43,10 @@ abstract class ProcessorAbstract implements InputProcessorContract, OutputProces
         return $this->data;
     }
 
-    public function setData(array $data): self
+    public function applyInput(InputProcessorContract $input): self
     {
-        $this->data = $data;
+        $input->fetch();
+        $this->data = $input->getData();
 
         return $this;
     }
@@ -55,11 +54,6 @@ abstract class ProcessorAbstract implements InputProcessorContract, OutputProces
     public function getFilename(): string
     {
         return $this->filename;
-    }
-
-    public function setFilename(string $filename): void
-    {
-        $this->filename = $filename;
     }
 
     public function store(): self
