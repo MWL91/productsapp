@@ -9,4 +9,6 @@ interface OutputProcessorContract
     public function applyInput(InputProcessorContract $input): self;
 
     public function encode(): string;
+
+    public function store(): void;
 }

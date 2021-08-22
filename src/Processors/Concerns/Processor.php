@@ -51,4 +51,11 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
         $this->rawContent = $rawContent;
         return $this;
     }
+
+    public function store(): void
+    {
+        if (@file_put_contents($this->getFilename(), $this->encode()) === false) {
+            throw new \RuntimeException('File is not writable on ' . $this->getFilename());
+        }
+    }
 }
