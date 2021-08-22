@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="phpinsights fixes">
+    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="from csv example + small fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +201,7 @@
       <recent name="$PROJECT_DIR$/src/Outputs/Concerns" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ImportCommandTest.test_command_success">
+  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
     <configuration name="ImportCommandTest.test_command_success" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Integrations\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" method="test_command_success" scope="Method" />
       <method v="2" />
@@ -247,7 +246,7 @@
       <updated>1629532561643</updated>
       <workItem from="1629532566116" duration="1466000" />
       <workItem from="1629534377075" duration="37247000" />
-      <workItem from="1629617844944" duration="3718000" />
+      <workItem from="1629617844944" duration="3997000" />
     </task>
     <task id="LOCAL-00001" summary="command prepared">
       <created>1629543616737</created>
@@ -340,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629617915883</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="from csv example + small fixes">
+      <created>1629626737381</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1629626737381</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +378,8 @@
     <MESSAGE value="solution for exporting exceptional files" />
     <MESSAGE value="examples in readme" />
     <MESSAGE value="phpinsights fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="phpinsights fixes" />
+    <MESSAGE value="from csv example + small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="from csv example + small fixes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/productsapp@ImportServiceTest_test_import_fails_on_phar_protocol.xml" NAME="ImportServiceTest.test_import_fails_on_phar_protocol Coverage Results" MODIFIED="1629571649229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

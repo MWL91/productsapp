@@ -82,9 +82,15 @@ input, inside output processor.
 
 ### PHP Insights
 
+I've used phpinsights to find any issues in code, that may be fixed. To run raport use
+
+```bash
+make qa
+```
+
 All measures from phpinsights are under 90% of rate.
 
-    95.0%      91.4%          100 %        98.8%
+    95.0%      91.7%          100 %        98.8%
      Code    Complexity    Architecture    Style
 
 ### Code coverage

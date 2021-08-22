@@ -19,15 +19,15 @@ final class XmlProcessor extends SerializerProcessor
         return self::FORMAT;
     }
 
-    protected function getSerializer(): SerializerInterface
-    {
-        return new Serializer([new ObjectNormalizer()], [new XmlEncoder()]);
-    }
-
     public function decode(): self
     {
         $data = $this->getSerializer()->decode($this->getRawContent(), $this->getFormat());
         $this->data = end($data);
         return $this;
+    }
+
+    protected function getSerializer(): SerializerInterface
+    {
+        return new Serializer([new ObjectNormalizer()], [new XmlEncoder()]);
     }
 }

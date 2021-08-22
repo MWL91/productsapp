@@ -11,4 +11,7 @@ import:
 	- rm -rf .tmp
 
 coverage:
-	- docker exec -e=XDEBUG_MODE=coverage  productsapp phpunit --coverage-html coverage_report
+	- docker exec -e=XDEBUG_MODE=coverage productsapp phpunit --coverage-html coverage_report
+
+qa:
+	- docker exec productsapp ./vendor/bin/phpinsights
