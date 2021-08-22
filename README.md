@@ -53,6 +53,12 @@ php bin/console import ftp://pupDev:pupDev2018@transport.productsup.io/coffee_fe
 php bin/console import ./tests/resources/coffee_feed.xml result.csv
 ```
 
+#### Get local file .csv to covert to .xml
+
+```bash
+php bin/console import example.csv result.xml --inputFormat=csv --outputFormat=xml
+```
+
 #### Get local file with make shortcut (executable docker)
 
 ```bash

@@ -15,7 +15,7 @@ final class ImportService implements ImportServiceContract
     {
         $className = 'App\\Processors\\' . ucfirst($format) . 'Processor';
 
-        if (! class_exists($className)) {
+        if (!class_exists($className)) {
             throw new \RuntimeException('Input format ' . $format . ' not exists.');
         }
 
@@ -25,7 +25,8 @@ final class ImportService implements ImportServiceContract
     public function processImport(
         InputProcessorContract $input,
         OutputProcessorContract $output
-    ): OutputProcessorContract {
+    ): OutputProcessorContract
+    {
         $input->applyRawContent($this->getRawContent($input));
         $output->applyInput($input);
         $output->store();

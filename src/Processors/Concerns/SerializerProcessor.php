@@ -10,8 +10,7 @@ abstract class SerializerProcessor extends Processor
 {
     public function decode(): self
     {
-        $data = $this->getSerializer()->decode($this->getRawContent(), $this->getFormat());
-        $this->data = end($data);
+        $this->data = $this->getSerializer()->decode($this->getRawContent(), $this->getFormat());
         return $this;
     }
 
