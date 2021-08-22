@@ -6,17 +6,19 @@ namespace App\Services;
 
 use App\Dtos\ImportDto;
 use App\Processors\Concerns\InputProcessorContract;
+use App\Processors\Concerns\IOProcessorContract;
 use App\Processors\Concerns\OutputProcessorContract;
 use App\Services\Contracts\ImportServiceContract;
+use RuntimeException;
 
 final class ImportService implements ImportServiceContract
 {
-    public function getProcessor(string $format, string $filename): InputProcessorContract
+    public function getProcessor(string $format, string $filename): IOProcessorContract
     {
         $className = 'App\\Processors\\' . ucfirst($format) . 'Processor';
 
         if (! class_exists($className)) {
-            throw new \RuntimeException('Input format ' . $format . ' not exists.');
+            throw new RuntimeException('Input format ' . $format . ' not exists.');
         }
 
         return new $className($filename);
@@ -33,10 +35,10 @@ final class ImportService implements ImportServiceContract
         return $output;
     }
 
-    public function import(ImportDto $importDto): InputProcessorContract
+    public function import(ImportDto $importDto): OutputProcessorContract
     {
-        if (substr($importDto->getInputFile(), 0, 7) === 'phar://') {
-            throw new \RuntimeException('You can not use phar protocol as input.');
+        if (str_starts_with($importDto->getInputFile(), 'phar://')) {
+            throw new RuntimeException('You can not use phar protocol as input.');
         }
 
         $inputProcessor = $this->getProcessor($importDto->getInputFormat(), $importDto->getInputFile());
@@ -50,7 +52,7 @@ final class ImportService implements ImportServiceContract
         $content = @file_get_contents($input->getFilename());
 
         if (empty($content)) {
-            throw new \RuntimeException('File is not readable from ' . $input->getFilename());
+            throw new RuntimeException('File is not readable from ' . $input->getFilename());
         }
 
         return $content;

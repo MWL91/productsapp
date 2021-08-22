@@ -78,7 +78,9 @@ Currently, you can use csv, and xml both for input and output.
 Class processor, contains data, and may be assigned to each other by `applyInput` method, that also fetch data from the
 input, inside output processor.
 
-## Quality measures
+![alt view file structure.png to see class structure](structure.png)
+
+## Quality assurance
 
 ### PHP Insights
 

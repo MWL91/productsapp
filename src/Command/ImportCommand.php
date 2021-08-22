@@ -7,6 +7,7 @@ namespace App\Command;
 use App\Dtos\ImportDto;
 use App\Services\Contracts\ImportServiceContract;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -57,7 +58,7 @@ final class ImportCommand extends Command
                     $input->getArgument('outputFile')
                 )
             );
-        } catch (\RuntimeException $exception) {
+        } catch (RuntimeException $exception) {
             $io->error($exception->getMessage());
             $this->logger->error($exception->getMessage(), [$exception]);
 

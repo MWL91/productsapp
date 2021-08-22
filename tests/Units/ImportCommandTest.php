@@ -6,6 +6,7 @@ namespace App\Tests\Units;
 
 use App\Command\ImportCommand;
 use App\Processors\Concerns\InputProcessorContract;
+use App\Processors\Concerns\IOProcessorContract;
 use App\Services\Contracts\ImportServiceContract;
 use Mockery;
 use PHPUnit\Framework\TestCase;
@@ -19,7 +20,7 @@ class ImportCommandTest extends TestCase
     {
         $importServiceMock = Mockery::mock(ImportServiceContract::class)
             ->shouldReceive([
-                'import' => Mockery::mock(InputProcessorContract::class)
+                'import' => Mockery::mock(IOProcessorContract::class)
                     ->shouldReceive([
                         'getFilename' => 'output.xml'
                     ])

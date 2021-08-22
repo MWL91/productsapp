@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="from csv example + small fixes">
+    <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="phpinsights">
+      <change afterPath="$PROJECT_DIR$/src/Processors/Concerns/IOProcessorContract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/XmlProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/ImportCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/ImportCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Contracts/ImportServiceContract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/ImportCommandTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/-productsapp/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="DockDockBuild.Settings">
+    <option name="codePath" value="$PROJECT_DIR$" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -169,6 +175,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="8" />
+  </component>
   <component name="ProjectId" id="1x1pgHah046wfNXHvqE8Y4T0aqY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -183,6 +192,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Processors/Concerns" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -206,16 +217,16 @@
       <TestRunner class="App\Tests\Integrations\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" method="test_command_success" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="Units" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests/Units" />
+      <method v="2" />
+    </configuration>
     <configuration name="XmlProcessorTest.test_fetch_and_output_data_as_csv" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Units\XmlProcessorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" method="test_fetch_and_output_data_as_csv" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="XmlProcessorTest.test_fetch_and_store_data_as_csv" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Units\XmlProcessorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" method="test_fetch_and_store_data_as_csv" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="XmlProcessorTest.test_fetch_data_from_xml_input" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Units\XmlProcessorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" method="test_fetch_data_from_xml_input" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="XmlProcessorTest.test_fetch_data_from_xml_input_when_invalid_file" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -228,11 +239,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.Units" />
         <item itemvalue="PHPUnit.ImportCommandTest.test_command_success" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_data_from_xml_input_when_invalid_file" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_and_output_data_as_csv" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_and_store_data_as_csv" />
-        <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_data_from_xml_input" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +257,9 @@
       <updated>1629532561643</updated>
       <workItem from="1629532566116" duration="1466000" />
       <workItem from="1629534377075" duration="37247000" />
-      <workItem from="1629617844944" duration="3997000" />
+      <workItem from="1629617844944" duration="4429000" />
+      <workItem from="1629627467869" duration="291000" />
+      <workItem from="1629627774338" duration="1532000" />
     </task>
     <task id="LOCAL-00001" summary="command prepared">
       <created>1629543616737</created>
@@ -346,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629626737381</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="phpinsights">
+      <created>1629626983960</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1629626983960</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +399,8 @@
     <MESSAGE value="examples in readme" />
     <MESSAGE value="phpinsights fixes" />
     <MESSAGE value="from csv example + small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="from csv example + small fixes" />
+    <MESSAGE value="phpinsights" />
+    <option name="LAST_COMMIT_MESSAGE" value="phpinsights" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/productsapp@ImportServiceTest_test_import_fails_on_phar_protocol.xml" NAME="ImportServiceTest.test_import_fails_on_phar_protocol Coverage Results" MODIFIED="1629571649229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

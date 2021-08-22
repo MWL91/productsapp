@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Processors\Concerns;
 
-abstract class Processor implements InputProcessorContract, OutputProcessorContract, FilenameContract
+use RuntimeException;
+
+abstract class Processor implements IOProcessorContract, FilenameContract
 {
     protected array $data;
     protected string $filename;
@@ -55,7 +57,7 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
     public function store(): void
     {
         if (@file_put_contents($this->getFilename(), $this->encode()) === false) {
-            throw new \RuntimeException('File is not writable on ' . $this->getFilename());
+            throw new RuntimeException('File is not writable on ' . $this->getFilename());
         }
     }
 }
