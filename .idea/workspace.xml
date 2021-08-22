@@ -3,9 +3,49 @@
   <component name="ChangeListManager">
     <list default="true" id="0288c184-a2f1-4656-b1aa-f65805f451ae" name="Default Changelist" comment="readme + exec">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/OutputProcessorContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/OutputProcessorContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/Processor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/ImportService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImportService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Command/ImportCommand.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Command/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Command/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Dtos/ImportDto.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Dtos/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Dtos/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/FilenameContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/InputProcessorContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/OutputProcessorContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/Processor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/SerializerProcessor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/Concerns/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/CsvProcessor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/XmlProcessor.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Processors/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Services/Contracts/ImportServiceContract.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Services/Contracts/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Services/Contracts/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Services/ImportService.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Services/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/Services/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_css/nv.d3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_css/octicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_icons/file-code.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_icons/file-directory.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_js/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_js/file.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_js/nv.d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/_js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage_report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processors/Concerns/SerializerProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +240,11 @@
       <recent name="$PROJECT_DIR$/src/Outputs/Concerns" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
+  <component name="RunManager" selected="PHPUnit.ImportCommandTest.test_command_success">
+    <configuration name="ImportCommandTest.test_command_success" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Integrations\ImportCommandTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integrations/ImportCommandTest.php" method="test_command_success" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="XmlProcessorTest.test_fetch_and_output_data_as_csv" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Units\XmlProcessorTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Units/XmlProcessorTest.php" method="test_fetch_and_output_data_as_csv" scope="Method" />
       <method v="2" />
@@ -221,17 +265,13 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ImportCommandTest.test_command_success" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_data_from_xml_input_when_invalid_file" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_and_output_data_as_csv" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_and_store_data_as_csv" />
         <item itemvalue="PHPUnit.XmlProcessorTest.test_fetch_data_from_xml_input" />
-        <item itemvalue="PHPUnit.tests" />
       </list>
     </recent_temporary>
   </component>

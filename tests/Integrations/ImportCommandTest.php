@@ -34,6 +34,8 @@ class ImportCommandTest extends KernelTestCase
         yield ['ftp://pupDev:pupDev2018@transport.productsup.io/coffee_feed.xml', 3449, 'csv'];
 
         yield [__DIR__ . '/../resources/coffee_feed.xml', 3449, 'csv'];
+
+        yield [__DIR__ . '/../../phpunit.xml.dist', 1, 'csv'];
     }
 
     /**

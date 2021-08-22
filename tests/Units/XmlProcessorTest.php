@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Units;
 
+use App\Processors\Concerns\Processor;
 use App\Processors\CsvProcessor;
 use App\Processors\XmlProcessor;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;

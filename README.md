@@ -61,7 +61,13 @@ All measures from phpinsights are under 90% of rate.
 
 ### Code coverage
 
-Code is covered by tests in 100%. Kernel file is excluded. Coverage html report is available in `/coverage_report`.
+Code is covered by tests in 100%. Kernel file is excluded. You can generate coverage report using:
+
+```bash
+make coverage
+```
+
+Report will be printed in `/coverage_report`.
 
 ### PHP Code Sniffer
 
