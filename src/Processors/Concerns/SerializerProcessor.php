@@ -8,7 +8,6 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 abstract class SerializerProcessor extends Processor
 {
-
     public function decode(): self
     {
         $data = $this->getSerializer()->decode($this->getRawContent(), $this->getFormat());
