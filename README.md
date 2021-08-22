@@ -10,11 +10,13 @@ make build
 
 ## Run program
 
-To run program with your local files, you need to copy it to current directory and execute. Use command below:
+To run program with your local files use command below:
 
 ```bash
 make import INPUT=./tests/resources/coffee_feed.xml OUTPUT=test.csv
 ```
+
+**Make command works only with local files!**
 
 Alternatively if you run docker, you can execute task:
 
@@ -22,10 +24,10 @@ Alternatively if you run docker, you can execute task:
 docker exec productsapp php bin/console import tests/resources/coffee_feed.xml output.csv
 ```
 
-Or do it using php installed on your machine (v8.0).
+Or do it using php installed on your machine (php v8.0).
 
 ```bash
- php bin/console import INPUT_FILE OUTPUT_FILE --inputFormat=INPUT_FORMAT --outputFormat=OUTPUT_FORMAT
+php bin/console import INPUT_FILE OUTPUT_FILE --inputFormat=INPUT_FORMAT --outputFormat=OUTPUT_FORMAT
 ```
 
 where
@@ -36,6 +38,26 @@ where
 | OUTPUT_FILE    | path to output                                       | -       |
 | INPUT_FORMAT   | input format                                         | xml     |
 | OUTPUT_FORMAT  | output format                                        | csv     |
+
+### Example usage
+
+#### Get remote file
+
+```bash
+php bin/console import ftp://pupDev:pupDev2018@transport.productsup.io/coffee_feed.xml result.csv
+```
+
+#### Get local file
+
+```bash
+php bin/console import ./tests/resources/coffee_feed.xml result.csv
+```
+
+#### Get local file with make shortcut (executable docker)
+
+```bash
+make import INPUT=./tests/resources/coffee_feed.xml OUTPUT=result.csv
+```
 
 ## Code description
 
