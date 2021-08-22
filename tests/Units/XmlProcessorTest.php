@@ -35,40 +35,41 @@ class XmlProcessorTest extends KernelTestCase
 
     public function test_fetch_data_from_xml_input(): void
     {
-        $input = new XmlProcessor(__DIR__ . '/../resources/coffee_feed.xml');
-        $input->fetch();
+        $inputFile = __DIR__ . '/../resources/coffee_feed.xml';
+        $input = new XmlProcessor($inputFile, file_get_contents($inputFile));
+        $input->decode();
 
         $this->assertCount(3449, $input->getData());
-        $this->assertIsString($input->getContent());
+        $this->assertIsString($input->encode());
     }
 
     /**
      * @dataProvider invalidFilesDataProvider
      */
-    public function test_fetch_data_from_xml_input_when_invalid_file(string $fileName): void
+    public function test_fetch_data_from_xml_input_when_invalid_file(string $fileName, string $fileContent): void
     {
         $this->expectException(\RuntimeException::class);
 
-        $input = new XmlProcessor($fileName);
-        $input->fetch();
+        $input = new XmlProcessor($fileName, $fileContent);
+        $input->decode();
     }
 
     public function invalidFilesDataProvider(): \Generator
     {
-        yield [__DIR__];
-        yield [__DIR__ . '/example.xml'];
-        yield [__DIR__ . '/../resources/invalid.xml'];
+        yield [__DIR__, ''];
+        yield [__DIR__ . '/example.xml', ''];
+        yield [__DIR__ . '/../resources/invalid.xml', ''];
     }
 
-    public function test_fetch_and_store_data_as_csv(): void
+    public function test_fetch_and_output_data_as_csv(): void
     {
+        $inputFileName = __DIR__ . '/../resources/coffee_feed.xml';
         $exportedFileName = __DIR__ . '/../resources/' . time() . '.csv';
 
-        $input = new XmlProcessor(__DIR__ . '/../resources/coffee_feed.xml');
+        $input = new XmlProcessor($inputFileName, file_get_contents($inputFileName));
         $output = new CsvProcessor($exportedFileName);
-        $output->applyInput($input)->store();
+        $output->applyInput($input);
 
-        $this->assertFileExists($exportedFileName);
-        unlink($exportedFileName);
+        $this->assertCount(3449, $output->getData());
     }
 }

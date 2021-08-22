@@ -8,14 +8,15 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 abstract class SerializerProcessor extends Processor
 {
-    public function fetch(): self
+
+    public function decode(): self
     {
-        $this->data = $this->getSerializer()->decode($this->getInputContent($this->filename), $this->getFormat())['item'];
+        $this->data = $this->getSerializer()->decode($this->getRawContent(), $this->getFormat())['item'];
 
         return $this;
     }
 
-    public function getContent(): string
+    public function encode(): string
     {
         return $this->getSerializer()->encode($this->data, $this->getFormat());
     }

@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Dtos\ImportDto;
 use App\Processors\Concerns\InputProcessorContract;
+use App\Processors\Concerns\OutputProcessorContract;
 use App\Services\Contracts\ImportServiceContract;
 
 final class ImportService implements ImportServiceContract
@@ -14,7 +15,7 @@ final class ImportService implements ImportServiceContract
     {
         $className = 'App\\Processors\\' . ucfirst($format) . 'Processor';
 
-        if (!class_exists($className)) {
+        if (! class_exists($className)) {
             throw new \RuntimeException('Input format ' . $format . ' not exists.');
         }
 
@@ -23,10 +24,13 @@ final class ImportService implements ImportServiceContract
 
     public function processImport(
         InputProcessorContract $input,
-        InputProcessorContract $output
-    ): InputProcessorContract
-    {
-        return $output->applyInput($input)->store();
+        OutputProcessorContract $output
+    ): OutputProcessorContract {
+        $input->applyRawContent($this->getRawContent($input));
+        $output->applyInput($input);
+        $this->store($output);
+
+        return $output;
     }
 
     public function import(ImportDto $importDto): InputProcessorContract
@@ -39,5 +43,25 @@ final class ImportService implements ImportServiceContract
         $outputProcessor = $this->getProcessor($importDto->getOutputFormat(), $importDto->getOutputFile());
 
         return $this->processImport($inputProcessor, $outputProcessor);
+    }
+
+    private function store(OutputProcessorContract $output): self
+    {
+        if (@file_put_contents($output->getFilename(), $output->encode()) === false) {
+            throw new \RuntimeException('File is not writable on ' . $output->getFilename());
+        }
+
+        return $this;
+    }
+
+    private function getRawContent(InputProcessorContract $input): string
+    {
+        $content = @file_get_contents($input->getFilename());
+
+        if (empty($content)) {
+            throw new \RuntimeException('File is not readable from ' . $input->getFilename());
+        }
+
+        return $content;
     }
 }

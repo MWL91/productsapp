@@ -56,12 +56,12 @@ input, inside output processor.
 
 All measures from phpinsights are under 90% of rate.
 
-    95.0%      90.7%          100 %        96.4%
+    95.0%      91.4%          100 %        98.8%
      Code    Complexity    Architecture    Style
 
 ### Code coverage
 
-Code is covered by tests in 100%. Kernel file is excluded.
+Code is covered by tests in 100%. Kernel file is excluded. Coverage html report is available in `/coverage_report`.
 
 ### PHP Code Sniffer
 

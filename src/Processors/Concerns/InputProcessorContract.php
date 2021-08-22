@@ -8,7 +8,9 @@ interface InputProcessorContract
 {
     public function getFormat(): string;
 
-    public function fetch(): self;
+    public function decode(): self;
 
     public function getData(): array;
+
+    public function applyRawContent(string $rawContent): self;
 }

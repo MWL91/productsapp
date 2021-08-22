@@ -8,18 +8,20 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
 {
     protected array $data;
     protected string $filename;
+    protected ?string $rawContent;
 
-    public function __construct(string $filename, array $data = [])
+    public function __construct(string $filename, ?string $rawContent = null, array $data = [])
     {
         $this->filename = $filename;
+        $this->rawContent = $rawContent;
         $this->data = $data;
     }
 
     abstract public function getFormat(): string;
 
-    abstract public function fetch(): self;
+    abstract public function decode(): self;
 
-    abstract public function getContent(): string;
+    abstract public function encode(): string;
 
     public function getData(): array
     {
@@ -28,7 +30,7 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
 
     public function applyInput(InputProcessorContract $input): self
     {
-        $input->fetch();
+        $input->decode();
         $this->data = $input->getData();
 
         return $this;
@@ -39,23 +41,14 @@ abstract class Processor implements InputProcessorContract, OutputProcessorContr
         return $this->filename;
     }
 
-    public function store(): self
+    public function getRawContent(): ?string
     {
-        if (@file_put_contents($this->filename, $this->getContent()) === false) {
-            throw new \RuntimeException('File is not writable on '.$this->filename);
-        }
-
-        return $this;
+        return $this->rawContent;
     }
 
-    protected function getInputContent(string $file): string
+    public function applyRawContent(string $rawContent): self
     {
-        $content = @file_get_contents($file);
-
-        if (empty($content)) {
-            throw new \RuntimeException('File is not readable');
-        }
-
-        return $content;
+        $this->rawContent = $rawContent;
+        return $this;
     }
 }
