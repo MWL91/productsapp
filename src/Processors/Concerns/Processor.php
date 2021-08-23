@@ -54,6 +54,17 @@ abstract class Processor implements IOProcessorContract, FilenameContract
         return $this;
     }
 
+    public function fetchRawContent(): string
+    {
+        $content = @file_get_contents($this->getFilename());
+
+        if (empty($content)) {
+            throw new RuntimeException('File is not readable from ' . $this->getFilename());
+        }
+
+        return $content;
+    }
+
     public function store(): void
     {
         if (@file_put_contents($this->getFilename(), $this->encode()) === false) {

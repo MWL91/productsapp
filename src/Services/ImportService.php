@@ -28,7 +28,7 @@ final class ImportService implements ImportServiceContract
         InputProcessorContract $input,
         OutputProcessorContract $output
     ): OutputProcessorContract {
-        $input->applyRawContent($this->getRawContent($input));
+        $input->applyRawContent($input->fetchRawContent());
         $output->applyInput($input);
         $output->store();
 
@@ -45,16 +45,5 @@ final class ImportService implements ImportServiceContract
         $outputProcessor = $this->getProcessor($importDto->getOutputFormat(), $importDto->getOutputFile());
 
         return $this->processImport($inputProcessor, $outputProcessor);
-    }
-
-    private function getRawContent(InputProcessorContract $input): string
-    {
-        $content = @file_get_contents($input->getFilename());
-
-        if (empty($content)) {
-            throw new RuntimeException('File is not readable from ' . $input->getFilename());
-        }
-
-        return $content;
     }
 }
